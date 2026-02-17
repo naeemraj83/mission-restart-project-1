@@ -20,7 +20,7 @@ const cardData =(datas)=>{
         cards.innerHTML = 
         
        ` 
-         <div class="card bg-base-100 w-76 shadow-sm">
+         <div class="card bg-base-100 w-76 h-[350px] shadow-sm">
           <figure>
             <img class='w-30 p-3 bg-slate-400'
               src="${data.image}"
@@ -43,15 +43,15 @@ const cardData =(datas)=>{
           <h2 class="card-title  line-clamp-1">Card Title ${data.title}</h2>
             
             
-            <div>
+            <div class='flex gap-10 mt-5 '>
               <div>
               
               
-         <button class="btn" onclick="loadModelDetail(${data.id})">open modal</button>
+         <button class="btn" onclick="loadModelDetail(${data.id})"><i class="fa-regular fa-eye"></i>Details</button>
 
             
               </div>
-              <button class="btn btn-primary">Add</button>
+              <button class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i>Add</button>
             </div>
           </div>
         </div>
@@ -76,15 +76,15 @@ const displayModelDetails =(data)=>{
  
   const detailsBox = document.getElementById('model_container')
   detailsBox.innerHTML= `
-  <p>${data.title}</p>
-  <p>${data.description}</p>
-  <div>
-  <p>${data.price}</p>
-  <p>${data.rating.rate}</p>
+  <p class='m-10 font-bold'>${data.title}</p>
+  <p class='m-10'>${data.description}</p>
+  <div class='flex ml-10  m-auto gap-20 '>
+  <p class='border   rounded w-auto p-1   font-bold'><i class="fa-solid fa-dollar-sign"></i>${data.price}</p>
+  <p class=' '> <i class="fa-solid fa-star"></i>${data.rating.rate}</p>
   </div>
-  <div>
-  <button></button>
-  <button></button>
+  <div class=' '>
+  <button class='btn m-10'><i class="fa-solid fa-bag-shopping"></i>Buy Now</button>
+  <button class='btn m-10'><i class="fa-solid fa-cart-arrow-down"></i> Add To Cart</button>
   </div>
   `
   console.log(detailsBox);
