@@ -75,6 +75,7 @@ const loadModelDetail =async(id)=>{
 const displayModelDetails =(data)=>{
  
   const detailsBox = document.getElementById('model_container')
+  
   detailsBox.innerHTML= `
   <p class='m-10 font-bold'>${data.title}</p>
   <p class='m-10'>${data.description}</p>

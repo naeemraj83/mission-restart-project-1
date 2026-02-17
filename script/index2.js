@@ -1,51 +1,48 @@
-const Allproduct =()=>{
-    fetch("https://fakestoreapi.com/products")
-    .then(res=> res.json())
-    .then((data)=>cardData(data));
-}
 
-const cardData =(datas)=>{
 
-    const trendingCard = document.getElementById("allCards")
-     
-    console.log(datas);
+const loadProducts = async () => {
+  const res = await fetch("https://fakestoreapi.com/products");
+  const data = await res.json();
+  displayProducts(data);
+};
 
-    for( data of datas ){
+const displayProducts = (products) => {
+  const allCards = document.getElementById("allCards");
+  allCards.innerHTML = "";
 
-       
-        // console.log(datas);
-        const cards = document.createElement("div");
-        cards.innerHTML = 
-        
-       ` 
-         <div class="card bg-base-100 w-76 h-[350px] shadow-sm">
+  products.forEach((product) => {
+    const div = document.createElement("div");
+    div.classList = "card bg-base-100 shadow-xl p-4";
+
+    div.innerHTML = `
+      <div class="card bg-base-100 w-76 h-[350px] shadow-sm">
           <figure>
             <img class='w-30 p-3 bg-slate-400'
-              src="${data.image}"
+              src="${product.image}"
               alt="Shoes"
             />
             
           </figure>
           <div class="flex gap-10">
-          <p>${data.category}</p>
+          <p>${product.category}</p>
           <div class="flex gap-2 ">
-          <p>${data.rating.rate}</p>
-          <p>(${data.rating.count})</p>
+          <p>${product.rating.rate}</p>
+          <p>(${product.rating.count})</p>
           </div>
           </div>
 
           <div>
-          <p><i class="fa-solid fa-dollar-sign"></i>${data.price}</p>
+          <p><i class="fa-solid fa-dollar-sign"></i>${product.price}</p>
           </div>
           <div class="card-body">
-          <h2 class="card-title  line-clamp-1">Card Title ${data.title}</h2>
+          <h2 class="card-title  line-clamp-1">Card Title ${product.title}</h2>
             
             
             <div class='flex gap-10 mt-5 '>
               <div>
               
               
-         <button class="btn" onclick="loadModelDetail(${data.id})"><i class="fa-regular fa-eye"></i>Details</button>
+         <button class="btn" onclick="loadModelDetail(${product.id})"><i class="fa-regular fa-eye"></i>Details</button>
 
             
               </div>
@@ -53,13 +50,42 @@ const cardData =(datas)=>{
             </div>
           </div>
         </div>
-       `
-          console.log(data.image);
-        
-        trendingCard.append(cards)
-       
-    }
-}
+    `;
+
+    allCards.appendChild(div);
+  });
+};
+const loadCategory = async (category) => {
+  const res = await fetch("https://fakestoreapi.com/products");
+  const data = await res.json();
+
+  const filtered = data.filter(
+    (product) => product.category === category
+  );
+
+  displayProducts(filtered);
+};
+
+document.getElementById("all").addEventListener("click", () => {
+  loadProducts();
+});
+
+document.getElementById("men").addEventListener("click", () => {
+  loadCategory("men's clothing");
+});
+
+document.getElementById("jewelery").addEventListener("click", () => {
+  loadCategory("jewelery");
+});
+
+document.getElementById("electronics").addEventListener("click", () => {
+  loadCategory("electronics");
+});
+
+document.getElementById("women").addEventListener("click", () => {
+  loadCategory("women's clothing");
+});
+
 
 
 const loadModelDetail =async(id)=>{
@@ -72,6 +98,7 @@ const loadModelDetail =async(id)=>{
 const displayModelDetails =(data)=>{
  
   const detailsBox = document.getElementById('model_container')
+  console.log(detailsBox);
   detailsBox.innerHTML= `
   <p class='m-10 font-bold'>${data.title}</p>
   <p class='m-10'>${data.description}</p>
@@ -84,10 +111,14 @@ const displayModelDetails =(data)=>{
   <button class='btn m-10'><i class="fa-solid fa-cart-arrow-down"></i> Add To Cart</button>
   </div>
   `
-  console.log(detailsBox);
+//   console.log(detailsBox);
   document.getElementById('my_modal_5').showModal();
 }
 
 
 
-Allproduct();
+loadProducts()
+
+
+// Allproduct();
+// AllCatagories();

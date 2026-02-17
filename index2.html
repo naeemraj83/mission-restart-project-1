@@ -75,25 +75,35 @@
 
  <section>
     <div>
-<p>all cards</p>
-    </div>
-   <div id="allCards" class="grid grid-cols-4 gap-10 mt-15  m-auto justify-center w-11/12">
+        <div class="flex gap-7 w-[700px] m-auto mt-10 border  rounded-2xl p-2">
+            <p id="all" class="btn rounded-2xl">All Products</p>
+            <p id="men" class="btn rounded-2xl">Men's Clothing</p>
+            <p id="jewelery" class="btn rounded-2xl">Jewelery</p>
+            <p id="electronics" class="btn rounded-2xl">Electronics</p>
+            <p id="women" class="btn rounded-2xl">women's clothing</p>
+        </div>
 
-      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    </div>
+   
+
+
+<div id="allCards" class="grid grid-cols-4 gap-10 mt-15 m-auto justify-center w-11/12">
+</div>
+
+<!-- ✅ Modal MUST be outside -->
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
-    <div id="model_container">
-
-    </div>
+    <div id="model_container"></div>
     <div class="modal-action">
       <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
         <button class="btn">Close</button>
       </form>
     </div>
   </div>
 </dialog>
 
-   </div>
+
+
  </section>
 
 
