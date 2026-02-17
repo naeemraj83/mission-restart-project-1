@@ -14,8 +14,9 @@ const displayProducts = (products) => {
     const div = document.createElement("div");
     div.classList = "card bg-base-100 shadow-xl p-4";
 
-    div.innerHTML = `
-      <div class="card bg-base-100 w-76 h-[350px] shadow-sm">
+    div.innerHTML = 
+   ` 
+         <div class="card bg-base-100 w-76 h-[350px] sm:mb-10 shadow-sm">
           <figure>
             <img class='w-30 p-3 bg-slate-400'
               src="${product.image}"
@@ -23,16 +24,16 @@ const displayProducts = (products) => {
             />
             
           </figure>
-          <div class="flex gap-10">
-          <p>${product.category}</p>
-          <div class="flex gap-2 ">
-          <p>${product.rating.rate}</p>
+          <div class="flex  gap-10 w-60 mt-2 m-auto">
+          <p class=' rounded-2xl p-1 bg-purple-300'>${product.category}</p>
+          <div class="flex gap-1 ">
+          <p  > <i class="fa-solid fa-star"></i>${product.rating.rate}</p>
           <p>(${product.rating.count})</p>
           </div>
           </div>
 
           <div>
-          <p><i class="fa-solid fa-dollar-sign"></i>${product.price}</p>
+          <p class="font-bold ml-10  mt-3"><i class="fa-solid fa-dollar-sign"></i>${product.price}</p>
           </div>
           <div class="card-body">
           <h2 class="card-title  line-clamp-1">Card Title ${product.title}</h2>
@@ -50,7 +51,8 @@ const displayProducts = (products) => {
             </div>
           </div>
         </div>
-    `;
+       `
+    ;
 
     allCards.appendChild(div);
   });
