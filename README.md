@@ -70,15 +70,16 @@ https://fakestoreapi.com/products/1
 > **⚠️ Warning:** Do not use any AI tools to answer these questions. You must write the answers in **Bangla**.
 
 #### 1) What is the difference between `null` and `undefined`?
-
+ ## undefined মানে হলো কোনো ভেরিয়েবল বানানো হয়েছে কিন্তু তাতে কোনো মান দেওয়া হয়নি 
+ ## null হলো যখন আমরা ইচ্ছা করে কোনো ভেরিয়েবলকে "খালি" রাখতে চাই।
 #### 2) What is the use of the `map()` function in JavaScript? How is it different from `forEach()`?
-
+ ## map() মূলত একটি লুপ চালিয়ে কাজ শেষে আমাদের একটি নতুন অ্যারে হাতে ধরিয়ে দেয়। অন্যদিকে, forEach() শুধু লুপ চালায় কিন্তু কোনো কিছু ফেরত (return) দেয় না; এটি সাধারণত ডেটা প্রিন্ট বা লুপের ভেতর সরাসরি কোনো কাজ করার জন্য ব্যবহৃত হয়।
 #### 3) What is the difference between `==` and `===`?
-
+## == শুধু মান (value) চেক করে,  কিন্তু === হলো  এটি মান এবং টাইপ—দুইটিই হুবহু মিলতে হবে |
 #### 4) What is the significance of `async`/`await` in fetching API data?
-
+ ## API থেকে ডেটা আনতে সময় লাগে। async/await জাভাস্ক্রিপ্টকে বলে, "ডেটা না আসা পর্যন্ত ধৈর্য ধরো, তাড়াহুড়ো করো না।
 #### 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
-
+ ## স্কোপ মানে হলো ভেরিয়েবলের "এলাকা"
 ## ⚡ Dynamic Features & Functionalities
 
 1) Category Loading
