@@ -20,9 +20,9 @@ const cardData =(datas)=>{
         cards.innerHTML = 
         
        ` 
-         <div class="card bg-base-100 w-76 h-[350px] sm:mb-10 shadow-sm">
+         <div class="card bg-base-100 w-76 h-[500px] sm:mb-10 shadow-sm">
           <figure>
-            <img class='w-30 p-3 bg-slate-400'
+            <img class='w-[350px] h-60 p-3 bg-cover bg-slate-400'
               src="${data.image}"
               alt="Shoes"
             />

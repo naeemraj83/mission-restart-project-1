@@ -16,15 +16,15 @@ const displayProducts = (products) => {
 
     div.innerHTML = 
    ` 
-         <div class="card bg-base-100 w-76 h-[350px] sm:mb-10 shadow-sm">
+         <div class="card bg-base-100 w-76 h-[500px] sm:mb-10 shadow-sm">
           <figure>
-            <img class='w-30 p-3 bg-slate-400'
+            <img class='w-[350px] h-60 p-3 bg-cover bg-slate-200'
               src="${product.image}"
               alt="Shoes"
             />
             
           </figure>
-          <div class="flex  gap-10 w-60 mt-2 m-auto">
+          <div class="flex  gap-10 w-64 mt-2 m-auto">
           <p class=' rounded-2xl p-1 bg-purple-300'>${product.category}</p>
           <div class="flex gap-1 ">
           <p  > <i class="fa-solid fa-star"></i>${product.rating.rate}</p>
